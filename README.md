@@ -5,3 +5,4 @@
 - added bootstrap css and js - easily removed
 - google fonts added in functions.php
 - in theme folder, run ```npm run start``` 
+- includes script for acf options pages in functions.php

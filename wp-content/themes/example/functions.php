@@ -55,10 +55,10 @@ if ( ! function_exists( 'wpbp_setup' ) ) :
 			'page',
 			));
 
-		// This theme uses wp_nav_menu() in one location.
+
 		register_nav_menus( array(
-            'main-menu' => esc_html__( 'Main menu', 'arcus' ),
-            'footer-menu' => esc_html__( 'Footer menu', 'arcus' ),
+            'main-menu' => esc_html__( 'Main menu', 'example' ),
+            'footer-menu' => esc_html__( 'Footer menu', 'example' ),
         ) );
 
 			
@@ -205,28 +205,13 @@ function custom_add_google_fonts() {
 /**********************************************
  * FAVICON
  *********************************************/
-// function arcusfavicon() {
-//     echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('wpurl').'/wp-content/themes/arcus-theme/images/favicon.ico" />';
+// function examplefavicon() {
+//     echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('wpurl').'/wp-content/themes/example/images/favicon.ico" />';
 // }
-// add_action('wp_head', 'arcusfavicon');
+// add_action('wp_head', 'examplefavicon');
 
 
-/**********************************************
- * REGISTER MENUS
- *********************************************/
-/**
- * Summary of register_my_menus
- * @return void
- */
-function register_my_menus() {
-  register_nav_menus(
-    array(
-      'footer-menu' => __( 'Footer Menu' ),
-      'alt-menu' => __( 'Alt Menu' )
-     )
-   );
- }
- add_action( 'init', 'register_my_menus' );
+
 
 
 

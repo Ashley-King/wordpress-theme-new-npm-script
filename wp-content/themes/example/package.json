@@ -1,0 +1,42 @@
+{
+  "name": "web_name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "browser-sync": "^2.29.1",
+    "concurrently": "latest",
+    "cssnano": "latest",
+    "onchange": "latest",
+    "postcss": "latest",
+    "postcss-cli": "latest",
+    "sass": "latest",
+    "uglify-js": "latest"
+  },
+  "scripts": {
+    "sass": "sass --watch assets/sass/style.scss assets/css/style.css",
+    "build:sass": "sass assets/sass/style.scss assets/css/style.css",
+    "prefix": "npm run build:sass && postcss --no-map assets/css/style.css --use=autoprefixer --output=assets/css/style.css",
+    "minify:css": "postcss assets/css/style.css -u cssnano -o assets/css/style.min.css",
+    "concat:js": "uglifyjs assets/js/scripts/**/*.js --output assets/js/bundle.js",
+    "minify:js": "uglifyjs assets/js/bundle.js --compress --mangle --output assets/js/bundle.min.js",
+    "watch:php": "onchange \"**/*.php\" -- echo 'PHP file changed'",
+    "browser-sync": "browser-sync start  --proxy 'http://sideproject.local' --files '**/*.php, assets/css/*.css, assets/js/*.js'",
+    "start": "concurrently \"npm run sass\" \"onchange 'assets/sass/**/*.scss' -- npm run prefix\" \"onchange 'assets/css/style.css' -- npm run minify:css\" \"onchange 'assets/js/scripts/**/*.js' -- npm run concat:js\" \"onchange 'assets/js/bundle.js' -- npm run minify:js\" \"npm run watch:php\" \"npm run browser-sync\""
+
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "Repo/Path"
+  },
+  "keywords": [
+    "SASS"
+  ],
+  "author": "Ashley",
+  "license": "ISC",
+  "homepage": "Path"
+}

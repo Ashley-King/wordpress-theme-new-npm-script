@@ -4,3 +4,4 @@
 - Basic page templates with no "guts" or styles
 - added bootstrap css and js - easily removed
 - google fonts added in functions.php
+- in theme folder, run ```npm run start``` 
